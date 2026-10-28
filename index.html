@@ -1,0 +1,407 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#e4d8ff">
+    <meta name="description" content="A little purple universe made with love for Jaijuuuuu.">
+
+    <title>For Jaijuuuuu 💜</title>
+
+    <!-- Purple theme and styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating flowers and hearts appear here -->
+    <div id="particles" aria-hidden="true"></div>
+
+
+    <!-- ====================================== -->
+    <!-- SCREEN 1: WELCOME -->
+    <!-- ====================================== -->
+
+    <section class="screen active" id="welcomeScreen">
+
+        <div class="card">
+
+            <div class="decoration">🪻 💜 🌷</div>
+
+            <p class="eyebrow">A LITTLE SOMETHING FOR YOU</p>
+
+            <h1>Hey, Jaijuuuuu! 💜</h1>
+
+            <p>
+                Psst... my favourite human.
+                I made a tiny little world just for you.
+            </p>
+
+            <p>
+                Filled with purple skies, pretty flowers,
+                silly surprises, and a whole lot of love.
+            </p>
+
+            <p>
+                You don't have to pretend to be happy here.
+                You can just be you. 🫶
+            </p>
+
+            <button id="startButton">
+                Open your little surprise 💌
+            </button>
+
+            <p class="small">
+                Made with approximately a million kisses. 💋
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ====================================== -->
+    <!-- SCREEN 2: WHY I LOVE YOU -->
+    <!-- ====================================== -->
+
+    <section class="screen" id="reasonsScreen">
+
+        <div class="card">
+
+            <div class="decoration">💜 🌸 💜</div>
+
+            <p class="eyebrow">A LITTLE REMINDER FOR YOU</p>
+
+            <h1>Why I Love You 🥹</h1>
+
+            <div class="reason-list">
+
+                <div class="reason">
+                    💜 You make my world brighter just by being in it.
+                </div>
+
+                <div class="reason">
+                    🧸 You're my favourite person to annoy forever.
+                </div>
+
+                <div class="reason">
+                    🌷 I love all the little things that make you YOU.
+                </div>
+
+                <div class="reason">
+                    🐦‍⬛ Your kind heart is one of my favourite things about you.
+                </div>
+
+                <div class="reason">
+                    🫶 You deserve love on your sad days, too.
+                </div>
+
+                <div class="reason">
+                    😂 You're ridiculously cute, and I'm not taking complaints.
+                </div>
+
+            </div>
+
+            <button id="crowButton">
+                A little message for you 🐦‍⬛
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ====================================== -->
+    <!-- SCREEN 3: A LITTLE PURPLE SKY -->
+    <!-- ====================================== -->
+
+    <section class="screen" id="crowScreen">
+
+        <div class="card">
+
+            <div class="decoration">🌙 🪻 ✨</div>
+
+            <h1>A Little Purple Sky 💜</h1>
+
+            <!-- Animated crow scene -->
+            <div class="crow-scene">
+
+                <div class="moon">🌙</div>
+
+                <div class="stars">
+                    ✦　·　✧　·　✦
+                </div>
+
+                <div class="crow">🐦‍⬛</div>
+
+                <div class="flowers">
+                    🪻 🌷 🌼 🪻
+                </div>
+
+            </div>
+
+            <h2>For your gentle heart</h2>
+
+            <p>
+                Jaijuuuuu, I know today was difficult,
+                especially because you love crows so much.
+            </p>
+
+            <p>
+                What happened was an accident.
+                You never wanted that little bird to be hurt.
+            </p>
+
+            <p>
+                You don't have to rush yourself into feeling better.
+                It's okay to feel sad when something matters to you.
+            </p>
+
+            <p>
+                One painful moment doesn't define who you are.
+                Please be as kind to yourself as you are to the world. 💜
+            </p>
+
+            <button id="gameButton">
+                Can you catch some love? 🎮
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ====================================== -->
+    <!-- SCREEN 4: MINI-GAME -->
+    <!-- ====================================== -->
+
+    <section class="screen" id="gameScreen">
+
+        <div class="card game-card">
+
+            <div class="decoration">🎮 💜 ✨</div>
+
+            <p class="eyebrow">A TINY GAME FOR MY FAVOURITE HUMAN</p>
+
+            <h1>Catch My Love! 💗</h1>
+
+            <p>
+                Catch 10 hearts in 30 seconds
+                to unlock your special surprise!
+            </p>
+
+            <!-- Score and countdown -->
+            <div class="game-stats">
+
+                <span>
+                    💜 Hearts:
+                    <strong id="score">0</strong>/10
+                </span>
+
+                <span>
+                    ⏰ Time:
+                    <strong id="timer">30</strong>s
+                </span>
+
+            </div>
+
+            <!-- Hearts appear inside this area -->
+            <div id="gameArea">
+
+                <p class="game-instruction">
+                    Press start, then tap the hearts! 💗
+                </p>
+
+            </div>
+
+            <p id="gameMessage" aria-live="polite">
+                Ready, Jaijuuuuu? You got this! 🫶
+            </p>
+
+            <button id="playButton">
+                Start the game! 💗
+            </button>
+
+            <button id="surpriseButton" class="secondary hidden">
+                Unlock my surprise 💌
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ====================================== -->
+    <!-- SCREEN 5: MAGICAL SURPRISE -->
+    <!-- ====================================== -->
+
+    <section class="screen" id="magicScreen">
+
+        <div class="card magic-card">
+
+            <div class="decoration">💜 ✨ 🪻</div>
+
+            <!-- Purple night sky -->
+            <div class="night-sky">
+
+                <div class="big-moon">🌙</div>
+
+                <div class="night-stars">
+                    ✦　✧　⋆　✦　⋆　✧
+                </div>
+
+                <div class="night-crow">
+                    🐦‍⬛
+                </div>
+
+                <div class="night-flowers">
+                    🪻 🌷 🪻 🌸
+                </div>
+
+            </div>
+
+            <h1>You Unlocked My Heart! 💜</h1>
+
+            <p>
+                You caught the hearts, but you already had mine.
+            </p>
+
+            <p>
+                There's one last thing I made just for you...
+            </p>
+
+            <button id="letterButton">
+                Open your secret letter 💌
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ====================================== -->
+    <!-- SCREEN 6: THE LOVE LETTER -->
+    <!-- ====================================== -->
+
+    <section class="screen" id="letterScreen">
+
+        <div class="card letter-card">
+
+            <div class="decoration">💜 🪻 💜</div>
+
+            <p class="eyebrow">A LETTER FROM YOUR PERSON</p>
+
+            <h1>To My Jaijuuuuu 💌</h1>
+
+            <div class="letter">
+
+                <p>Hey, my love, 💜</p>
+
+                <p>
+                    I know today hurt your heart, especially because
+                    you love crows so much. I wish I could make
+                    that sad feeling a little lighter for you.
+                </p>
+
+                <p>
+                    Please remember that it was an accident.
+                    You never wanted that little bird to get hurt.
+                    You don't have to pretend you're okay,
+                    and you don't have to rush yourself into
+                    feeling better.
+                </p>
+
+                <p>
+                    I love the gentle parts of you —
+                    the parts that care, that feel deeply,
+                    and that notice little creatures other people
+                    might overlook.
+                </p>
+
+                <p>
+                    One heartbreaking moment doesn't define
+                    the kind of person you are.
+                </p>
+
+                <p>
+                    We don't have to fix everything right now.
+                    We can talk, sit quietly, laugh at something silly,
+                    or just exist together.
+                    If today feels heavy, you don't have to
+                    carry it all alone.
+                </p>
+
+                <p>
+                    Also, important announcement:
+                    your girlfriend loves you an absolutely
+                    ridiculous amount. This has been confirmed
+                    by absolutely no scientists, but I stand
+                    by my research. 😂💜
+                </p>
+
+                <p>
+                    Take a deep breath, my love.
+                    Be gentle with yourself today.
+                    I hope you give yourself some of the kindness
+                    you give to the world.
+                </p>
+
+                <p>
+                    I love you on the happy days, the sad days,
+                    and all the ordinary days in between.
+                </p>
+
+                <p class="signature">
+                    Always on your team,<br>
+                    Your person 💜
+                </p>
+
+            </div>
+
+            <button id="hugButton">
+                Press for a virtual hug 🤗
+            </button>
+
+            <!-- Appears after the virtual hug button is pressed -->
+            <div id="hugMessage" class="hug-message hidden">
+
+                <h2>🫂 HUG DELIVERED! 💜</h2>
+
+                <p>
+                    Unlimited replays included.
+                    No expiry date. No conditions.
+                    Just a girlfriend who loves you a lot. 🥹
+                </p>
+
+                <h2>
+                    You're my favourite human, Jaijuuuuu! 💜
+                </h2>
+
+                <div class="final-hearts">
+                    💜 💗 🪻 💗 💜
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ====================================== -->
+    <!-- FOOTER -->
+    <!-- ====================================== -->
+
+    <footer>
+        Made with love, lavender, and a million tiny hearts. 💜
+    </footer>
+
+
+    <!-- JavaScript: navigation, game, and animations -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+```

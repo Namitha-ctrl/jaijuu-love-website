@@ -1,0 +1,520 @@
+```css
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap');
+
+:root {
+    --purple: #9875d4;
+    --dark-purple: #594477;
+    --lavender: #eee5ff;
+    --light-pink: #fff1fa;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Nunito', sans-serif;
+    color: var(--dark-purple);
+
+    background: linear-gradient(
+        135deg,
+        #f5efff,
+        #e4d8ff,
+        #fff2fb,
+        #d9c9ff
+    );
+
+    background-size: 300% 300%;
+    animation: dreamyBackground 15s ease infinite;
+}
+
+/* BUTTONS */
+
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 14px 22px;
+    margin: 10px 4px;
+
+    background: linear-gradient(
+        135deg,
+        #a98ae8,
+        #c6a7f7
+    );
+
+    color: white;
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 15px;
+    cursor: pointer;
+
+    box-shadow: 0 5px 0 #8964c1;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 0 #8964c1;
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 #8964c1;
+}
+
+button:focus-visible {
+    outline: 3px solid #7450a8;
+    outline-offset: 4px;
+}
+
+/* SECONDARY BUTTON */
+
+button.secondary {
+    background: #e6d8ff;
+    color: #594477;
+    box-shadow: 0 5px 0 #c1a9eb;
+}
+
+/* IMPORTANT: HIDE ELEMENTS */
+
+.hidden,
+[hidden] {
+    display: none !important;
+}
+
+/* SCREEN LAYOUT */
+/* All screens are hidden unless they have the active class. */
+
+.screen {
+    display: none !important;
+    width: 100%;
+    min-height: 100vh;
+    padding: 35px 18px 65px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+/* Only the current screen is displayed. */
+
+.screen.active {
+    display: flex !important;
+    animation: screenAppear 0.7s ease both;
+}
+
+/* CONTENT CARD */
+
+.card {
+    width: 100%;
+    max-width: 680px;
+    padding: clamp(24px, 5vw, 42px);
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.84);
+    border: 2px solid white;
+    border-radius: 30px;
+
+    box-shadow: 0 20px 60px rgba(116, 80, 160, 0.18);
+}
+
+/* FLOWERS AND DECORATIONS */
+
+.decoration {
+    font-size: 38px;
+    margin-bottom: 12px;
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* HEADINGS */
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    color: #9a7bc9;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(30px, 7vw, 46px);
+    line-height: 1.4;
+    color: #8760bd;
+    margin: 18px 0;
+}
+
+h2 {
+    color: #8760bd;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.small {
+    font-size: 12px;
+    color: #a18bbd;
+    margin-top: 24px;
+}
+
+/* REASONS I LOVE YOU */
+
+.reason-list {
+    display: grid;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.reason {
+    padding: 16px;
+    border-radius: 18px;
+
+    background: #f4eeff;
+    border: 1px solid #e8dcff;
+
+    line-height: 1.7;
+    animation: screenAppear 0.5s ease both;
+}
+
+.reason:nth-child(even) {
+    background: #fff1fa;
+    border-color: #f9dff0;
+}
+
+/* CROW SCENE */
+
+.crow-scene {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    min-height: 220px;
+    margin: 25px auto;
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        180deg,
+        #9b82d6,
+        #c9b8f3 55%,
+        #f3e7ff
+    );
+}
+
+.moon {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 40px;
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.crow {
+    position: absolute;
+    top: 55px;
+    left: 50%;
+
+    transform: translateX(-50%);
+    font-size: 75px;
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+.flowers {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+
+    font-size: 28px;
+    letter-spacing: 5px;
+}
+
+.stars {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+
+    color: white;
+    font-size: 20px;
+
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+/* MINI-GAME */
+
+.game-stats {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.game-stats span {
+    background: #f1e9ff;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+/* GAME AREA */
+
+#gameArea {
+    position: relative;
+    width: 100%;
+    height: 330px;
+    overflow: hidden;
+
+    border: 2px dashed #c4a9f4;
+    border-radius: 22px;
+
+    background: linear-gradient(
+        145deg,
+        #f5eeff,
+        #fff1fa,
+        #e5d9ff
+    );
+
+    touch-action: manipulation;
+}
+
+.game-instruction {
+    padding: 90px 12px;
+    color: #9174ba;
+}
+
+/* CATCHABLE HEARTS */
+
+.heart {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+
+    background: transparent;
+    box-shadow: none;
+    border-radius: 50%;
+
+    font-size: 34px;
+    line-height: 1;
+}
+
+.heart:hover {
+    transform: scale(1.2);
+    box-shadow: none;
+}
+
+/* MAGICAL NIGHT SKY */
+
+.night-sky {
+    position: relative;
+    min-height: 240px;
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        180deg,
+        #30214e,
+        #65478f,
+        #a58bd2
+    );
+
+    color: white;
+}
+
+.big-moon {
+    font-size: 55px;
+    padding-top: 18px;
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.night-stars {
+    margin: 12px;
+    font-size: 22px;
+    letter-spacing: 4px;
+
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.night-crow {
+    font-size: 65px;
+    margin: 12px;
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+.night-flowers {
+    padding-bottom: 16px;
+    font-size: 28px;
+}
+
+/* LOVE LETTER */
+
+.letter {
+    text-align: left;
+    padding: clamp(18px, 4vw, 30px);
+
+    background: #fffaff;
+    border: 2px solid #e7d9ff;
+    border-radius: 22px;
+
+    box-shadow: inset 0 0 25px #f0e7ff;
+}
+
+.letter p {
+    line-height: 2;
+}
+
+.signature {
+    text-align: right;
+    font-family: 'Pacifico', cursive;
+    color: #8a61bd;
+    font-size: 20px;
+}
+
+/* FINAL VIRTUAL HUG */
+
+.hug-message {
+    margin-top: 25px;
+    padding: 20px;
+
+    border-radius: 22px;
+    background: #f1e9ff;
+
+    animation: screenAppear 0.8s ease both;
+}
+
+.final-hearts {
+    font-size: 30px;
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* FLOATING HEARTS AND FLOWERS */
+
+#particles {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.particle {
+    position: absolute;
+    top: -40px;
+
+    animation: falling linear forwards;
+    opacity: 0.8;
+}
+
+/* FOOTER */
+
+footer {
+    position: relative;
+    text-align: center;
+
+    padding: 15px;
+    color: #927bb3;
+    font-size: 12px;
+}
+
+/* ANIMATIONS */
+
+@keyframes dreamyBackground {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes screenAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes falling {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 480px) {
+    .screen {
+        padding: 20px 12px 45px;
+    }
+
+    .card {
+        padding: 24px 17px;
+        border-radius: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    button {
+        max-width: 100%;
+    }
+
+    #gameArea {
+        height: 300px;
+    }
+}
+
+/* ACCESSIBILITY: REDUCE ANIMATIONS IF REQUESTED */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+```
